@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manfaat || Prone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="ulbi.jpg" type="image/x-icon" style="border-radius: 20px;">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+        }
+        .hero-section {
+            background-color: #FF5000;
+            color: white;
+            padding: 60px 0;
+            border-radius: 50px;
+            margin-top: 140px;
+            position: relative;
+            border-left: 5px solid #3c3c3c; /* Border kiri seperti embed Discord */
+        }
+        .hero-section img {
+            max-width: 100%;
+            margin-left: -100px;
+            border-radius: 30px;
+        }
+        .hero-section .btn {
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-size: 1.2em;
+        }
+        .feature-section {
+            padding: 60px 0;
+        }
+        .feature-box {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .feature-box img {
+            width: 200px;
+            height: auto;
+        }
+        .feature-box i {
+            font-size: 100px;
+        }
+        .course-section {
+            padding: 60px 0;
+            background-color: #f0f0f0;
+        }
+        .course-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .course-card h4, .course-card p {
+            margin-bottom: 15px;
+        }
+
+        .course-card img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (min-width: 768px) {
+            .course-card {
+                height: 100%;
+            }
+        }
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+        .footer-section {
+            background-color: #FF5000;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar-logo img {
+            width: 40px;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-links li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 0;
+        }
+
+        .navbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .navbar-actions .btn {
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .coba-premium {
+            background-color: #5a2aab;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .masuk, .daftar {
+            color: rgb(255, 255, 255);
+            background-color: rgb(255, 89, 0);
+        }
+
+        .masuk:hover, .daftar:hover {
+            background-color: #f3f3f3;
+        }
+
+        .coba-premium:hover {
+            background-color: #ff6a00;
+        }
+        .shadow-custom {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        transition: box-shadow 0.3s ease;
+        }
+        .shadow-custom:hover {
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.35);
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            min-width: 160px;
+            padding: 10px 0;
+            border-radius: 15px;
+            list-style-type: none;
+            margin: 0;
+        }
+
+        .dropdown-menu li a {
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            color: #000;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .navbar-links .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .custom-border-top {
+            border-top: 3px solid #FF5000;
+        }
+        .custom-border-bottom {
+            border-bottom: 3px solid #FF5000;
+        }
+        .custom-border-start {
+            border-start: 10px solid #3c3c3c;
+        }
+        .custom-border-end {
+            border-end: 3px solid #FF5000;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar fixed-top">
+        <div class="navbar-logo">
+            <img src="ulbi.jpg" alt="Ulbi Logo">
+            <ul class="navbar-links">
+                <li class="dropdown">
+                    <a href="#">Pengguna <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="prone.docx">Petunjuk Penggunaan</a></li>
+                        <li><a href="fitur_utama.html">Fitur Utama</a></li>
+                        <li><a href="manfaat.html">Manfaat</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-links">
+                <li><a href="tentang_prone.html">Deskripsi Singkat</a></li>
+            </ul>
+            <ul class="navbar-links">
+                <li><a href="index.html">Keunggulan</a></li>
+            </ul>
+        </div>
+    </nav>  
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-section text-center container">
+        <div class="row align-items-center">
+            <div class="col-lg-12 p-5 text-start custom-border-start">
+                <h1>Manfaat Prone</h1>
+                <ul class="list-unstyled my-4">
+                    <li>Manfaat PRONE  untuk Lingkungan Universitas: <br>
+                        Kemudahan Penggunaan : PRONE dirancang dengan antarmuka yang ramah pengguna, sehingga memudahkan Mahasiswa dan Dosen dalam proses penilaian dan pengumpulan. Pengguna dapat meng-akses melalui perangkat pribadi atau yang tersedia di universitas. <br><br>
+                        Keamanan dan Privasi : Dengan fitur keamanan canggih, setiap penilaian yang diberikan oleh Dosen atau pengumpulan yang di lakukan oleh Mahasiswa dijamin keamanannya. Privasi pengguna dan berkas-berkas terjaga dengan baik, sehingga setiap Mahasiswa dan Dosen merasa aman dan nyaman dalam melakukan penilaian atau pengumpulan. <br><br>
+                        Efisiensi Waktu : Menggantikan metode penilaian dan pengumpulan projek tradisional yang memerlukan waktu dan persiapan lebih banyak, PRONE memungkinkan proses penilaian yang lebih cepat dan efisien, menghemat waktu bagi Mahasiswa dan Dosen. <br><br>
+                        Transparansi dan Akurasi : Penilaian yang diberikan oleh Dosen kepada Mahasiswa dapat dilihat setiap saat, memberikan transparansi penuh dan memastikan bahwa setiap penilaian dinilai dengan teliti oleh Dosen dan pengumpulan yang dikumpulkan dengan lengkap oleh Mahasiswa. Ini meningkatkan akurasi penilaian dan umpan balik. <br><br>
+                        Ketersediaan Data dan Analisis : Data penilaian yang diperoleh dapat dianalisis untuk meningkatkan proses pembelajaran dan penilaian di universitas. Mahasiswa dapat melihat kemajuan mereka dan Dosen dapat memantau perkembangan setiap Mahasiswa secara efektif.</li>
+                </ul>
+                <button class="btn btn-warning text-dark shadow-custom" onclick="goBack()">
+                    <i class="fas fa-chevron-left"></i> Kembali
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section text-center mt-5">
+        <p>&copy; 2024 Wattpad. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

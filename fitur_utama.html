@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitur || Prone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="ulbi.jpg" type="image/x-icon" style="border-radius: 20px;">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+        }
+        .hero-section {
+            background-color: #FF5000;
+            color: white;
+            padding: 60px 0;
+            border-radius: 50px;
+            margin-top: 140px;
+            position: relative;
+            border-left: 5px solid #3c3c3c; /* Border kiri seperti embed Discord */
+        }
+        .hero-section img {
+            max-width: 100%;
+            margin-left: -100px;
+            border-radius: 30px;
+        }
+        .hero-section .btn {
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-size: 1.2em;
+        }
+        .feature-section {
+            padding: 60px 0;
+        }
+        .feature-box {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .feature-box img {
+            width: 200px;
+            height: auto;
+        }
+        .feature-box i {
+            font-size: 100px;
+        }
+        .course-section {
+            padding: 60px 0;
+            background-color: #f0f0f0;
+        }
+        .course-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .course-card h4, .course-card p {
+            margin-bottom: 15px;
+        }
+
+        .course-card img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (min-width: 768px) {
+            .course-card {
+                height: 100%;
+            }
+        }
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+        .footer-section {
+            background-color: #FF5000;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar-logo img {
+            width: 40px;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-links li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 0;
+        }
+
+        .navbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .navbar-actions .btn {
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .coba-premium {
+            background-color: #5a2aab;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .masuk, .daftar {
+            color: rgb(255, 255, 255);
+            background-color: rgb(255, 89, 0);
+        }
+
+        .masuk:hover, .daftar:hover {
+            background-color: #f3f3f3;
+        }
+
+        .coba-premium:hover {
+            background-color: #ff6a00;
+        }
+        .shadow-custom {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        transition: box-shadow 0.3s ease;
+        }
+        .shadow-custom:hover {
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.35);
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            min-width: 160px;
+            padding: 10px 0;
+            border-radius: 15px;
+            list-style-type: none;
+            margin: 0;
+        }
+
+        .dropdown-menu li a {
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            color: #000;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .navbar-links .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .custom-border-top {
+            border-top: 3px solid #FF5000;
+        }
+        .custom-border-bottom {
+            border-bottom: 3px solid #FF5000;
+        }
+        .custom-border-start {
+            border-start: 10px solid #3c3c3c;
+        }
+        .custom-border-end {
+            border-end: 3px solid #FF5000;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar fixed-top">
+        <div class="navbar-logo">
+            <img src="ulbi.jpg" alt="Ulbi Logo">
+            <ul class="navbar-links">
+                <li class="dropdown">
+                    <a href="#">Pengguna <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="prone.docx">Petunjuk Penggunaan</a></li>
+                        <li><a href="fitur_utama.html">Fitur Utama</a></li>
+                        <li><a href="manfaat.html">Manfaat</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-links">
+                <li><a href="tentang_prone.html">Deskripsi Singkat</a></li>
+            </ul>
+            <ul class="navbar-links">
+                <li><a href="index.html">Keunggulan</a></li>
+            </ul>
+        </div>
+    </nav>  
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center container">
+        <div class="row align-items-center">
+            <div class="col-lg-12 p-5 text-start custom-border-start">
+                <h1>Fitur Utama Aplikasi</h1>
+                <ul class="list-unstyled my-4">
+                    <li>Fitur untuk Mahasiswa: <br><br>
+                        1.	Menambahkan Judul Project : Mahasiswa dapat menambahkan judul projectnya pada aplikasi setelah berhasil login. <br>
+                        2.	Mengubah Password dan Username : Mahasiswa dapat mengubah Password dan Username-nya pada bagian profile. <br>
+                        3.	Menambahkan data Bimbingan : Mahasiswa dapat menambahkan data Bimbingannya ketika telah selesai melakukan Bimbingan dengan Dosen Pembimbing. <br>
+                        4.	Mengunggah Draft Sidang : Mahasiswa dapat mengunggah Draft Sidangnya pada halaman Pengumpulan Draft Sidang. <br>
+                        5.	Mengunggah Laporan dan DPL akhir : Mahasiswa dapat mengunggah Buku Laporan dan Buku DPL pada halaman Pengumpulan Laporan dan DPL akhir.</li><br><br>
+                    <li>Fitur untuk Dosen: <br><br>
+                        1.Mengubah isi Bimbingan Mahasiswa : Dosen dapat mengubah data Bimbingan Mahasiswa yang dibimbing nya, Dosen dapat mengubahnya di halaman Bimbingan. <br>
+                        2. 	Menolak dan Menerima pengajuan Rekomendasi : Dosen dapat menolak atau menerima pengajuan rekomendasi dari Mahasiswa nya, bisa dilihat pada halaman Rekomendasi. <br>
+                        3.	Menghapus dan Melihat data Pengumpulan Draft Sidang : Dosen dapat melihat isi data draft sidang yang dikumpulkan oleh Mahasiswa nya serta bisa menghapus data yang telah dikumpulkan, bisa dilihat pada halaman Pengumpulan Draft Sidang. <br>
+                        4.	Menilai hasil Sidang : Dosen dapat menilai Mahasiswa nya ketika telah selesai melakukan Sidang, bisa dilihat pada halaman Nilai Sidang. <br>
+                        5.	Mencatat : Dosen dapat mencatat hasil sidang Mahasiswa nya lalu catatan tersebut dapat dilihat oleh Mahasiswa nya. <br>
+                        6.	Melihat data Laporan dan DPL akhir : Dosen dapat melihat data Laporan dan DPL akhir yang telah dikumpulkan oleh Mahasiswa nya, bisa dilihat pada halaman Pengumpulan Laporan dan DPL akhir.</li><br><br>
+                    <li>Fitur untuk Admin: <br><br>
+                        1.	Menambahkan atau Menghapus Mahasiswa dan Dosen : Admin dapat menambahkan atau menghapus data mahasiswa dan dosen, untuk bagian mahasiswa yaitu ditambahkan pada halaman beranda sedangkan untuk dosen pada halaman dosen pembimbing. <br>
+                        2.	Menambahkan Grup : Admin dapat menambahkan atau menghapus Grup pada halaman Grup. <br>
+                        3.	Menambahkan Pembimbing : Admin dapat menambahkan atau menghapus Pembimbing untuk sebuah grup pada halaman Pembimbing. <br>
+                        4.	Menghapus Bimbingan: Admin dapat menghapus Bimbingan yang telah di lakukan oleh Mahasiswa kepada Dosen Pembimbing di  halaman Bimbingan . <br>
+                        5.	Menghapus Rekomendasi : Admin dapat menghapus Rekomendasi untuk Mahasiswa yang telah diterima oleh Dosen Pembimbing di halaman Rekomendasi. <br>
+                        6.	Menghapus Data Draft Sidang : Admin dapat menghapus Data Draft Sidang Mahasiswa di halaman Pengumpulan Draft Sidang. <br>
+                        7.	Menambahkan atau Menghapus Jadwal Sidang : Admin dapat menambahkan atau menghapus Jadwal yang telah dibuat untuk sidang di halaman Jadwal Sidang. <br>
+                        8.	Menghapus Nilai Sidang : Admin dapat menghapus Nilai Sidang Mahasiswa di halaman Nilai Sidang. <br> 
+                        9.	Menghapus Catatan Sidang : Admin dapat menghapus Catatan Sidang Mahasiswa di halaman Catatan Sidang. <br>
+                        10.	Menambahkan atau Menghapus Berita Acara Sidang : Admin dapat menambahkan atau menghapus Berita Acara Sidang di halaman Berita Acara Sidang. <br>
+                        11.	Menghapus data Buku Laporan dan Buku DPL Akhir : Admin dapat menghapus data Buku Laporan dan Buku DPL Akhir yang di unggah oleh mahasiswa.</li><br><br>
+                </ul>
+                <button class="btn btn-warning text-dark shadow-custom" onclick="goBack()">
+                    <i class="fas fa-chevron-left"></i> Kembali
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section text-center mt-5">
+        <p>&copy; 2024 Wattpad. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
